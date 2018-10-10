@@ -1,14 +1,14 @@
 ﻿@model OdeToFood.ViewModels.HomeIndexViewModel
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<title></title>
-</head>
-<body>
-	<h1>@Model.CurrentMessage</h1>
-	<table>
-		@foreach (var item in Model.Restaurants)
-		{
+@{
+	ViewBag.Title = "Home page";
+}
+
+
+<h1>All restaurants</h1>
+<table>
+	@foreach (var item in Model.Restaurants)
+	{
 		<tr>
 			<td>@item.Id</td>
 			<td>@item.Name</td>
@@ -17,8 +17,10 @@
 				<a asp-action="Details" asp-route-id="@item.Id">Details</a>
 			</td>
 		</tr>
-		}
-	</table>
-	<a asp-action="Create">Add restaurant</a>
-</body>
-</html>
+	}
+</table>
+<a asp-action="Create">Add restaurant</a>
+
+@section footer {
+	@Model.CurrentMessage
+}
