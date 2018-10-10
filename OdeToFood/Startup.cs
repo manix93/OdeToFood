@@ -15,7 +15,7 @@ namespace OdeToFood
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddSingleton<IGreeter, Greeter>();
-			services.AddScoped<IRestaurantData, InMemoryRestaurantData>(); //Scoped telling us that if we have IRestaurantData item put there InMemoryRestaurantData class
+			services.AddSingleton<IRestaurantData, InMemoryRestaurantData>(); //Scoped telling us that if we have IRestaurantData item put there InMemoryRestaurantData class
 			services.AddMvc();
 		}
 
